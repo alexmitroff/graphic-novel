@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Panorama</title>
+        <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="static/pannellum/pannellum.css"/>
+    </head>
+    <body>
+        <div id="panorama"></div>
+        <script src="static/pannellum/pannellum.js"></script>
+        <script>
+            pannellum.viewer('panorama', {
+                    "type": "equirectangular",
+                    "panorama": "static/images/02/panorama.jpg",
+                    "autoLoad": true,
+                    "showControls": false,
+                    "autoRotate": -2,
+            });
+        </script>
+    </body>
+</html>
