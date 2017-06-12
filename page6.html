@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <title>6 | RUSH</title>
         <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
     </head>
     <body>
@@ -9,13 +10,43 @@
         
             <defs>
                 <clipPath id="cut-off">
-                      <rect x="76.6" y="122" width="77" height="146" />
+                      <rect x="5" y="0" width="150" height="300" />
                 </clipPath>
             </defs>
             
-            <g>
-                <image xlink:href="static/images/04/top.png" x="1.5" y="1.5" height="134" width="155"/>
+            <g clip-path="url(#cut-off)">
+                <g>
+                    <image id="knight" xlink:href="static/images/06/top.png" x="-95" y="1.5" height="150" width="250"/>
+                </g>
+
+                <g>
+                    <image id="back" xlink:href="static/images/06/bottom-back.png" x="0" y="150" height="170" width="250"/>
+                    <image xlink:href="static/images/06/bottom-front.png" x="0" y="140" height="165" width="160"/>
+                </g>
             </g>
+                <image xlink:href="static/images/06/bottom-border.png" x="0" y="0" height="300" width="160"/>
+                    <animate
+                        xlink:href="#knight" 
+                        attributeName="x"
+                        from="-95"
+                        to="0"
+                        dur="1s"
+                        begin="1s"
+                        fill="freeze"
+                        restart="whenNotActive"
+                        id="knight-anim"
+                    />
+                    <animate
+                        xlink:href="#back" 
+                        attributeName="x"
+                        from="0"
+                        to="-90"
+                        dur="1s"
+                        begin="1s"
+                        fill="freeze"
+                        restart="whenNotActive"
+                        id="knight-anim"
+                    />
         </svg>
         <ul class="paginator">
             <li><a href="page1.html"><img src="static/images/pages/01.png" alt="1"></a></li>

@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>4 | RUSH</title>
+        <title>2 | RUSH</title>
         <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
     </head>
     <body>
@@ -10,39 +10,55 @@
         
             <defs>
                 <clipPath id="cut-off">
-                      <rect x="76.6" y="122" width="77" height="146" />
+                      <rect x="5" y="0" width="150" height="300" />
                 </clipPath>
             </defs>
             
-            <g>
-                <image xlink:href="static/images/04/top.png" x="1.5" y="1.5" height="134" width="155"/>
+            <g clip-path="url(#cut-off)">
+                <g>
+                    <image xlink:href="static/images/02/top-back.png" x="0" y="1.5" height="120" width="160"/>
+                    <image id="men" xlink:href="static/images/02/top-front.png" x="10" y="40" height="80" width="160"/>
+                </g>
+                <g>
+                    <image xlink:href="static/images/02/bottom-back.png" x="0" y="190" height="110" width="160"/>
+                    <image id="fog" xlink:href="static/images/02/bottom-fog.png" x="0" y="190" height="110" width="320"/>
+                    <image xlink:href="static/images/02/bottom-front.png" x="0" y="210" height="90" width="160"/>
+                </g>
+                <g>
+                    <image xlink:href="static/images/02/middle.png" x="0" y="105" height="100" width="160"/>
+                </g>
+
             </g>
-            <g>
-                <image xlink:href="static/images/04/knight.png" x="-30" y="115" height="195" width="195" />
-            </g>
-            <g>
-                <image xlink:href="static/images/04/back-animation.png" x="76" y="121" height="148" width="78" />
-                <image id="anim" xlink:href="static/images/04/border-animaton.png" x="75" y="120" height="150" width="80" />
-                <image class="animated" id="knight" clip-path="url(#cut-off)" xlink:href="static/images/04/knight-animation.png" x="114" y="121" height="157.5" width="114" />
+                <image xlink:href="static/images/06/bottom-border.png" x="0" y="0" height="300" width="160"/>
                     <animate
-                        xlink:href="#knight" 
+                        xlink:href="#men" 
                         attributeName="x"
-                        from="114"
-                        to="72"
-                        dur="1s"
-                        begin="click"
+                        from="10"
+                        to="0"
+                        dur="3s"
+                        begin="0s"
                         fill="freeze"
                         restart="whenNotActive"
                         id="knight-anim"
                     />
-            </g>    
-        
+                    <animate
+                        xlink:href="#fog" 
+                        attributeName="x"
+                        from="0"
+                        to="-160"
+                        dur="20s"
+                        begin="0s"
+                        fill="freeze"
+                        repeatCount="indefinite"
+                        restart="always"
+                        id="knight-anim"
+                    />
         </svg>
         <ul class="paginator">
             <li><a href="page1.html"><img src="static/images/pages/01.png" alt="1"></a></li>
-            <li><a href="page2.html"><img src="static/images/pages/02.png" alt="2"></a></li>
+            <li><a href="page2.html"><img src="static/images/pages/02i.png" alt="2"></a></li>
             <li><a href="page3.html"><img src="static/images/pages/03.png" alt="3"></a></li>
-            <li><a href="page4.html"><img src="static/images/pages/04i.png" alt="4"></a></li>
+            <li><a href="page4.html"><img src="static/images/pages/04.png" alt="4"></a></li>
             <li><a href="page5.html"><img src="static/images/pages/05.png" alt="5"></a></li>
             <li><a href="page6.html"><img src="static/images/pages/06.png" alt="6"></a></li>
             <li><a href="page7.html"><img src="static/images/pages/07.png" alt="7"></a></li>
