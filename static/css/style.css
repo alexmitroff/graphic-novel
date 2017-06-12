@@ -8,6 +8,13 @@ body{
     background-color:#222;
 }
 
+#start{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
 svg {
     width:48vh;
     height:90vh;

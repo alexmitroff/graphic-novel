@@ -2,96 +2,12 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <title>RUSH</title>
         <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
-        <link rel="stylesheet" type="text/css" href="static/pannellum/pannellum.css"/>
     </head>
-    <body>
-        <svg id="page" viewBox="0 0 160 300">
-        
-            <defs>
-                <clipPath id="cut-off-bottom">
-                      <rect x="1" y="1" width="156" height="298" />
-                </clipPath>
-            </defs>
-            
-            <g id="paralax" clip-path="url(#cut-off-bottom)">
-                <image id="back" xlink:href="static/images/01/back.png" x="-2" y="0" height="300" width="164"/>
-                <image id="men" xlink:href="static/images/01/men.png" x="2" y="1" height="295" width="157"/>
-                <image id="rider" xlink:href="static/images/01/rider.png" x="3" y="22" height="232" width="96"/>
-                <image id="skulls" xlink:href="static/images/01/skulls.png" x="-6" y="185" height="121" width="172"/>
-            </g>
-            
-            <g>
-                <image xlink:href="static/images/01/plain.png" x="4" y="5" height="77" width="150"/>
-            </g>    
-        
-        </svg>
-        <div id="panorama"></div>
-        <script src="static/pannellum/pannellum.js"></script>
-        <script type="text/javascript">
-            window.onload = function(){
-                var paraBox = document.getElementById("page");
-                var bX = parseInt(document.getElementById("back").getAttribute("x")),
-                    bY = parseInt(document.getElementById("back").getAttribute("y")),
-                    mX = parseInt(document.getElementById("men").getAttribute("x")),
-                    mY = parseInt(document.getElementById("men").getAttribute("y")),
-                    rX = parseInt(document.getElementById("rider").getAttribute("x")),
-                    rY = parseInt(document.getElementById("rider").getAttribute("y")),
-                    sX = parseInt(document.getElementById("skulls").getAttribute("x")),
-                    sY = parseInt(document.getElementById("skulls").getAttribute("y"));
-            
-                paraBox.onmousemove = function ( event ) {
-                    event = event || window.event;
-                    var bbox = paraBox.getBBox();
-                        x = event.clientX - step(bbox.x),
-                        y = event.clientY,
-                        svg = mouse2svg(x,y);
-                                    
-                    mouseParallax ( 'back', bX, bY, svg[0], svg[1], 1 );
-                    mouseParallax ( 'men', mX, mY, svg[0], svg[1], 1.5 );
-                    mouseParallax ( 'rider', rX, rY, svg[0], svg[1], 2 );
-                    mouseParallax ( 'skulls', sX, sY, svg[0], svg[1], 3.5 );
-                }
-            }    
-           
-            function step(units){
-                var height = window.innerHeight,
-                    s = height/300,
-                    px = units*s;
-                return px;
-            }
-            
-            function mouse2svg(mouseX, mouseY){
-                var page = document.getElementById("page"),
-                    height = window.innerHeight,
-                    s = 300/height,
-                    svgX = mouseX*s,
-                    svgY = mouseY*s;
-                return [svgX, svgY];
-            }
-            
-            function mouseParallax ( id, svgX, svgY, mouseX, mouseY, speed ) {
-                var obj = document.getElementById ( id );
-                var parentObj = obj.parentNode.getBBox(), 
-                    containerWidth = parentObj.width,
-                    containerHeight = parentObj.height,
-                    ow = parseInt(obj.getAttribute("width")),
-                    oh = parseInt(obj.getAttribute("height")), 
-                    newX = svgX - ((( mouseX - ( ow / 2 + svgX ) ) / containerWidth ) * speed );
-                    newY = svgY - ((( mouseY - ( oh / 2 + svgY ) ) / containerHeight ) * speed );
-                    
-                    obj.setAttribute("x", newX);
-                    obj.setAttribute("y", newY);
-
-            }
-            
-            pannellum.viewer('panorama', {
-                    "type": "equirectangular",
-                    "panorama": "static/images/02/panorama.jpg",
-                    "autoLoad": true,
-                    "showControls": false,
-                    "autoRotate": -2,
-            });
-        </script>
+    <body id="start">
+        <a href="page1.html">
+            <img src="static/images/сommon/title.png" alt="Start RUSH!">
+        </a>
     </body>
 </html>
