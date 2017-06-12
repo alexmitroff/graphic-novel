@@ -9,8 +9,8 @@ body{
 }
 
 svg {
-    width:53vh;
-    height:100vh;
+    width:48vh;
+    height:90vh;
     margin:0 auto;
     display:block;
 }
@@ -25,4 +25,19 @@ svg {
 
 .animated{
     cursor: url(../images/sommon/play.png);
+}
+
+.paginator{
+    padding:1vh 0;
+    width:48vh;
+    height:9vh;
+    margin:0 auto;
+    display:flex;
+    list-style-type:none;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.paginator > li:hover{
+    align-self:flex-start;
 }
