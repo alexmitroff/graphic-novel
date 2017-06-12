@@ -2,59 +2,30 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>6 | RUSH</title>
+        <title>5 | RUSH</title>
         <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
     </head>
     <body>
         <svg id="page" viewBox="0 0 160 300">
-        
             <defs>
                 <clipPath id="cut-off">
                       <rect x="5" y="0" width="150" height="300" />
                 </clipPath>
             </defs>
-            
             <g clip-path="url(#cut-off)">
-                <g>
-                    <image id="knight" xlink:href="static/images/06/top.png" x="-95" y="1.5" height="150" width="250"/>
-                </g>
-
-                <g>
-                    <image id="back" xlink:href="static/images/06/bottom-back.png" x="0" y="150" height="170" width="250"/>
-                    <image xlink:href="static/images/06/bottom-front.png" x="0" y="140" height="165" width="160"/>
-                </g>
+                <image xlink:href="static/images/05/back.png" x="0" y="0" height="300" width="160"/>
+                <image id="back" xlink:href="static/images/05/back-man.png" x="-80" y="0" height="300" width="300"/>
+                <image id="front" xlink:href="static/images/05/front-man.png" x="-2" y="90" height="215" width="210"/>
             </g>
-                <image xlink:href="static/images/06/bottom-border.png" x="0" y="0" height="300" width="160"/>
-                    <animate
-                        xlink:href="#knight" 
-                        attributeName="x"
-                        from="-95"
-                        to="0"
-                        dur="0.5s"
-                        begin="1s"
-                        fill="freeze"
-                        restart="whenNotActive"
-                        id="knight-anim"
-                    />
-                    <animate
-                        xlink:href="#back" 
-                        attributeName="x"
-                        from="0"
-                        to="-90"
-                        dur="0.5s"
-                        begin="1s"
-                        fill="freeze"
-                        restart="whenNotActive"
-                        id="knight-anim"
-                    />
+            <image xlink:href="static/images/05/border.png" x="0" y="0" height="300" width="160"/>
         </svg>
         <ul class="paginator">
             <li><a href="page1.html"><img src="static/images/pages/01.png" alt="1"></a></li>
             <li><a href="page2.html"><img src="static/images/pages/02.png" alt="2"></a></li>
             <li><a href="page3.html"><img src="static/images/pages/03.png" alt="3"></a></li>
             <li><a href="page4.html"><img src="static/images/pages/04.png" alt="4"></a></li>
-            <li><a href="page5.html"><img src="static/images/pages/05.png" alt="5"></a></li>
-            <li><a href="page6.html"><img src="static/images/pages/06i.png" alt="6"></a></li>
+            <li><a href="page5.html"><img src="static/images/pages/05i.png" alt="5"></a></li>
+            <li><a href="page6.html"><img src="static/images/pages/06.png" alt="6"></a></li>
             <li><a href="page7.html"><img src="static/images/pages/07.png" alt="7"></a></li>
         </ul>
         <script type="text/javascript">
@@ -62,12 +33,8 @@
                 var paraBox = document.getElementById("page");
                 var bX = parseInt(document.getElementById("back").getAttribute("x")),
                     bY = parseInt(document.getElementById("back").getAttribute("y")),
-                    mX = parseInt(document.getElementById("men").getAttribute("x")),
-                    mY = parseInt(document.getElementById("men").getAttribute("y")),
-                    rX = parseInt(document.getElementById("rider").getAttribute("x")),
-                    rY = parseInt(document.getElementById("rider").getAttribute("y")),
-                    sX = parseInt(document.getElementById("skulls").getAttribute("x")),
-                    sY = parseInt(document.getElementById("skulls").getAttribute("y"));
+                    mX = parseInt(document.getElementById("front").getAttribute("x")),
+                    mY = parseInt(document.getElementById("front").getAttribute("y"));
             
                 paraBox.onmousemove = function ( event ) {
                     event = event || window.event;
@@ -76,10 +43,8 @@
                         y = event.clientY,
                         svg = mouse2svg(x,y);
                                     
-                    mouseParallax ( 'back', bX, bY, svg[0], svg[1], 1 );
-                    mouseParallax ( 'men', mX, mY, svg[0], svg[1], 1.5 );
-                    mouseParallax ( 'rider', rX, rY, svg[0], svg[1], 2 );
-                    mouseParallax ( 'skulls', sX, sY, svg[0], svg[1], 3.5 );
+                    mouseParallax ( 'back', bX, bY, svg[0], svg[1], 2 );
+                    mouseParallax ( 'front', mX, mY, svg[0], svg[1], 4 );
                 }
             }    
            

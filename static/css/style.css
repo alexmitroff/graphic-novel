@@ -15,10 +15,13 @@ svg {
     display:block;
 }
 
+svg.small{
+    height:25vh;
+}
+
 #panorama {
-    margin-top:1rem;
-    width:53vh;
-    height:40vh;
+    width:48vh;
+    height:65vh;
     display:block;
     margin:0 auto;
 }
