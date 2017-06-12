@@ -8,20 +8,32 @@
         <svg id="page" viewBox="0 0 160 300">
         
             <defs>
-                <clipPath id="cut-off-bottom">
-                      <rect x="1" y="1" width="156" height="298" />
+                <clipPath id="cut-off">
+                      <rect x="76.6" y="122" width="77" height="146" />
                 </clipPath>
             </defs>
             
-            <g id="paralax" clip-path="url(#cut-off-bottom)">
-                <image id="back" xlink:href="static/images/01/back.png" x="-2" y="0" height="300" width="164"/>
-                <image id="men" xlink:href="static/images/01/men.png" x="2" y="1" height="295" width="157"/>
-                <image id="rider" xlink:href="static/images/01/rider.png" x="3" y="22" height="232" width="96"/>
-                <image id="skulls" xlink:href="static/images/01/skulls.png" x="-6" y="185" height="121" width="172"/>
-            </g>
-            
             <g>
-                <image xlink:href="static/images/01/plain.png" x="4" y="5" height="77" width="150"/>
+                <image xlink:href="static/images/03/top.png" x="1.5" y="1.5" height="134" width="155"/>
+            </g>
+            <g>
+                <image xlink:href="static/images/03/knight.png" x="-30" y="115" height="195" width="195" />
+            </g>
+            <g>
+                <image xlink:href="static/images/03/back-animation.png" x="76" y="121" height="148" width="78" />
+                <image id="anim" xlink:href="static/images/03/border-animaton.png" x="75" y="120" height="150" width="80" />
+                <image class="animated" id="knight" clip-path="url(#cut-off)" xlink:href="static/images/03/knight-animation.png" x="114" y="121" height="157.5" width="114" />
+                    <animate
+                        xlink:href="#knight" 
+                        attributeName="x"
+                        from="114"
+                        to="72"
+                        dur="1s"
+                        begin="click"
+                        fill="freeze"
+                        restart="whenNotActive"
+                        id="knight-anim"
+                    />
             </g>    
         
         </svg>
